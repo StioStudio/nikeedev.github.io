@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta id="redirect" http-equiv="refresh" content="5;url=http://nikee.dev/"/>
     <link rel="icon" href="assets/nikee.png" type="image/png">
-    <title>404 - nikeedev</title>
+    <title>301 - nikeedev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="style.css" rel="stylesheet">
@@ -39,30 +40,35 @@
         }
     </style>
 </head>
+
 <body>
     <!-- <script defer src="router-dom.js" type="module"></script> -->
     <script src="../404.js" type="module"></script>
     <div class="top">
-        <p id="name">404</p>
+        <p id="name">301</p>
     </div>
     <div class="bottom">
         <div class="menubar">
-            <a href="../">Back home</a>
             <a target="_blank" href="https://github.com/nikeedev">GitHub</a>
         </div>
         <br>
         <div class="projects-text">
-            <p><b>Sorry! This link doesn't exist or the page isn't published out yet.</b></p>
+            <p><b>https://nikeedev.stio.studio have been moved to <a href="http://nikee.dev">https://nikee.dev</a>.</b>
+            </p>
             <br>
-            <span id="yet">If this website has an GitHub repository you can try opening it on <a id="github-link"
-                    href=""></a>
+            <span id="yet">Redirect to nikee.dev in 5 seconds, or you can click this link:
+                <a id="github-link" href=""></a>
                 <br>
         </div>
 
         <script defer>
-            window.addEventListener("DOMContentLoaded",()=>{    let link = document.getElementById("github-link");
-                link.href = "https://github.com/nikeedev" + window.location.pathname;
-                link.innerText = "https://github.com/nikeedev" + window.location.pathname;});
+            window.addEventListener("DOMContentLoaded", () => {
+                const link = document.getElementById("github-link");
+                link.href = "https://nikee.dev" + window.location.pathname;
+                link.innerText = "https://nikee.dev" + window.location.pathname;
+            });
+            const redirect = document.querySelector("#redirect");
+            redirect.setAttribute("content", "5;url=https://nikee.dev" + window.location.pathname)
         </script>
     </div>
 </body>
